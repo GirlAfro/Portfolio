@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
-import Volunteering from './components/Volunteering';
 import Contact from './components/Contact';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <About />
       <Skills />
       <Experience />
-      <Volunteering />
       <Contact />
     </div>
   );
