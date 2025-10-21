@@ -3,20 +3,6 @@ import { Briefcase, MapPin, Calendar } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      company: 'Network Troubleshooting Project',
-      location: 'Remote',
-      role: 'Network Troubleshooting Specialist',
-      period: 'October 2024 - Present',
-      type: 'Personal Project',
-      responsibilities: [
-        'Created comprehensive network troubleshooting documentation and procedures',
-        'Developed systematic approaches to diagnose and resolve network connectivity issues',
-        'Implemented network monitoring and diagnostic tools for efficient problem resolution',
-        'Documented common network issues and their solutions for future reference'
-      ],
-      color: 'blue'
-    },
-    {
       company: 'Capital30 Company',
       location: 'Cape Town, South Africa',
       role: 'Data Entry Specialist',
