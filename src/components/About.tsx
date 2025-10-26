@@ -54,67 +54,21 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-emerald-400">Education</h3>
               </div>
 
-              <div className="space-y-6">
-                <div className="border-l-2 border-emerald-500/30 pl-4">
-                  <div className="flex items-start gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-emerald-400 mt-1" />
-                    <p className="text-sm text-emerald-400 font-mono">Vilnius University, Kaunas Faculty</p>
-                  </div>
-                  <h4 className="text-lg font-bold text-slate-200 mb-1">
-                    Bachelor of Information Systems and Cyber Security
-                  </h4>
-                  <p className="text-slate-400 text-sm mb-3">September 2023 - Expected January 2027</p>
-                  <div className="space-y-1">
-                    <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Networking</p>
-                    <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Operating Systems</p>
-                    <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Introduction to Databases</p>
-                    <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Data Algorithms</p>
-                    <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Web Development</p>
-                  </div>
+              <div className="border-l-2 border-emerald-500/30 pl-4">
+                <div className="flex items-start gap-2 mb-2">
+                  <MapPin className="w-4 h-4 text-emerald-400 mt-1" />
+                  <p className="text-sm text-emerald-400 font-mono">Vilnius University, Kaunas Faculty</p>
                 </div>
-
-                <div className="border-l-2 border-emerald-500/30 pl-4">
-                  <div className="flex items-start gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-emerald-400 mt-1" />
-                    <p className="text-sm text-emerald-400 font-mono">Jameson High School, Zimbabwe</p>
-                  </div>
-                  <h4 className="text-lg font-bold text-slate-200 mb-1">
-                    Advanced Level (Cambridge)
-                  </h4>
-                  <p className="text-slate-400 text-sm mb-3">January 2020 - December 2022</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-sm text-emerald-300">
-                      Accounting (A)
-                    </span>
-                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-sm text-emerald-300">
-                      Business Studies (A)
-                    </span>
-                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-sm text-emerald-300">
-                      Pure Mathematics (B)
-                    </span>
-                  </div>
-                </div>
-
-                <div className="border-l-2 border-emerald-500/30 pl-4">
-                  <div className="flex items-start gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-emerald-400 mt-1" />
-                    <p className="text-sm text-emerald-400 font-mono">Thornhill High School, Zimbabwe</p>
-                  </div>
-                  <h4 className="text-lg font-bold text-slate-200 mb-1">
-                    Ordinary Level (Cambridge)
-                  </h4>
-                  <p className="text-slate-400 text-sm mb-3">January 2016 - December 2019</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-sm text-emerald-300">
-                      Mathematics (A)
-                    </span>
-                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-sm text-emerald-300">
-                      Combined Science (A)
-                    </span>
-                    <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-sm text-emerald-300">
-                      English Language (B)
-                    </span>
-                  </div>
+                <h4 className="text-lg font-bold text-slate-200 mb-1">
+                  Bachelor of Information Systems and Cyber Security
+                </h4>
+                <p className="text-slate-400 text-sm mb-3">September 2023 - Expected January 2027</p>
+                <div className="space-y-1">
+                  <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Networking</p>
+                  <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Operating Systems</p>
+                  <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Introduction to Databases</p>
+                  <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Data Algorithms</p>
+                  <p className="text-slate-300 text-sm"><span className="text-cyan-400">›</span> Web Development</p>
                 </div>
               </div>
             </div>
