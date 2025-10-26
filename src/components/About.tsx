@@ -40,7 +40,7 @@ const About = () => {
                   <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
                   <div>
                     <p className="text-slate-200 font-semibold">Google Cybersecurity Professional Certificate</p>
-                    <p className="text-slate-400 text-sm">Expected: October 2025</p>
+                    <p className="text-slate-400 text-sm">Expected: November 2025</p>
                   </div>
                 </div>
               </div>
