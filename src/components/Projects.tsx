@@ -29,7 +29,7 @@ const Projects = () => {
       color: 'blue',
       icon: Wifi,
       period: 'October 2024',
-      downloadUrl: '/network-troubleshooting-report.md',
+      downloadUrl: '/network-troubleshooting-report.html',
       downloadName: 'Network Troubleshooting Report'
     }
   ];
