@@ -1,0 +1,1331 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 4425
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 18 Tf
+20.6999999999999993 TL
+0.102 0.251 0.671 rg
+56.6929133858267775 771.0238582677164914 Td
+(Network Troubleshooting Report) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.392 0.455 0.545 rg
+56.6929133858267775 717.1655905511811397 Td
+(Project by Teltonika) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 659.0553543307086102 Td
+(S2 and S3 Problems) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 602.3624409448818824 Td
+(Problem) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 565.5120472440944468 Td
+(S3 and S2 network devices cannot reach HTTP server and S2 network devices cannot reach S3 network) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 545.6695275590550409 Td
+(devices. The devices could not reach the HTTP server because of misconfigurations in the routing table and) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 525.827007874015635 Td
+(DHCP settings, leading to packet loss.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 483.3073228346456176 Td
+(Where was this problem located in the topology?) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 446.4569291338582389 Td
+(The issue was caused by routing misconfigurations on R2, and incorrect or missing configurations on the end) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 426.614409448818833 Td
+(devices in both S2 and S3.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 384.0947244094487587 Td
+(Steps Taken to Troubleshoot and Resolve the Issue) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 333.0711023622046696 Td
+(1. Approach) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 303.3073228346455608 Td
+(I approached the problem by first troubleshooting each network separately, ensuring that the devices could) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 283.4648031496062686 Td
+(communicate within their respective networks before addressing the inter-network connectivity and HTTP) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 263.6222834645668627 Td
+(access issues.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 221.1025984251967884 Td
+(2. S2 Network Troubleshooting) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 191.3388188976376796 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 191.3388188976376796 Td
+(On R2, I checked the routing table and discovered a misconfigured static route:) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 177.1655905511810261 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 177.1655905511810261 Td
+(Incorrect: 192.168.55.0/24 via 10.0.0.60) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 162.9923622047243725 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 162.9923622047243725 Td
+(Correct: 192.168.55.0/24 via 10.0.0.61 \(WR1\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 148.8191338582676053 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 148.8191338582676053 Td
+(Also, there was no static route from R2 to R1 at all.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 134.6459055118109518 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 134.6459055118109518 Td
+(I corrected the static route entries accordingly.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 120.4726771653542983 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 120.4726771653542983 Td
+(On end devices:) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 106.2994488188975311 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 106.2994488188975311 Td
+(PC0 had a wrong IP, incorrect subnet mask, and no default gateway.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 92.1262204724408775 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 92.1262204724408775 Td
+(PC1 had an APIPA address due to a failed DHCP request. The issue was that the DHCP server had no) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 77.9529921259841103 Td
+(default gateway set.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 6156
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 785.1970866141732586 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 785.1970866141732586 Td
+(I manually corrected PC0's settings.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 771.0238582677164914 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 771.0238582677164914 Td
+(For PC1, I enabled DHCP again after fixing the DHCP server, and the correct IP was assigned.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 756.8506299212598378 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 756.8506299212598378 Td
+(I verified connectivity between devices on S2 using ping, which was successful.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 728.5041732283464171 Td
+(3. S3 Network Troubleshooting) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 698.7403937007873083 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 698.7403937007873083 Td
+(Similar issues were present:) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 684.5671653543306547 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 684.5671653543306547 Td
+(Devices were not getting IPs due to missing DHCP server configuration.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 670.3939370078740012 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+85.0393700787401627 670.3939370078740012 Td
+(R2 had no static route to WR1.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 656.2207086614173477 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 656.2207086614173477 Td
+(I added the necessary static route on R2.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 642.0474803149605805 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 642.0474803149605805 Td
+(I then configured the DHCP server to assign correct settings to S3 devices.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 627.8742519685039269 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 627.8742519685039269 Td
+(After doing this, devices in S3 successfully communicated within the network.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 599.5277952755905062 Td
+(4. Restoring S2 to S3 Communication and HTTP Access) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 569.7640157480313974 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 569.7640157480313974 Td
+(The final issue was that S2 didn't have a static route to S3, preventing inter-network) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 555.5907874015747439 Td
+(communication.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 541.4175590551180903 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 541.4175590551180903 Td
+(I added a static route from S2's router to S3's network via R2.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 527.2443307086614368 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 527.2443307086614368 Td
+(I re-verified connectivity from both networks to each other.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 498.8978740157479592 Td
+(5. HTTP Server Access) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 469.1340944881889072 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 469.1340944881889072 Td
+(The misconfiguration in the routing table and DHCP settings seemed to have been causing) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 454.9608661417322537 Td
+(lost packets, preventing the devices from reaching the HTTP server.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 440.7876377952755433 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 440.7876377952755433 Td
+(After all configurations were corrected, the devices could successfully communicate with the HTTP server.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 426.614409448818833 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 426.614409448818833 Td
+(I verified HTTP access by pinging the server and then testing the web browser to access the server's HTML) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.118 0.251 0.686 rg
+70.8661417322834666 412.4411811023621226 Td
+(files. I successfully navigated through the pages, confirming the issue was resolved.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 384.0947244094487587 Td
+(Why this solution?) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 347.24433070866138 Td
+(The misconfigured static routes and DHCP settings prevented the devices from discovering correct paths and) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 327.4018110236220309 Td
+(obtaining valid IP configurations. Once these were corrected, the devices were able to reach the HTTP) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 307.559291338582625 Td
+(server, and packet loss was eliminated. Ensuring that all routers had the correct static routes and all DHCP) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 287.7167716535432191 Td
+(servers were properly configured allowed for proper inter-network communication and access to the HTTP) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 267.8742519685038133 Td
+(server.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 225.354566929133739 Td
+(Cell Tower) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 168.6616535433070112 Td
+(Problem) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 131.8112598425195756 Td
+(Not all smartphones connected to cell tower can reach HTTP server and its HTML files/websites.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 4385
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 785.1970866141732586 Td
+(Where was this problem located in the topology?) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 748.346692913385823 Td
+(The issue was traced to the iPhone 14's routing configuration settings.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 705.8270078740157487 Td
+(Steps Taken to Troubleshoot the Problem) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 654.8033858267716596 Td
+(1. Initial Connectivity Test) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 625.0396062992125508 Td
+(I tested HTTP server connectivity by pinging from all phones. Every smartphone responded successfully) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 605.1970866141732586 Td
+(except the iPhone 14.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 562.6774015748030706 Td
+(2. Configuration Comparison) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 532.9136220472440755 Td
+(I compared the iPhone 14's configuration with other functioning smartphones and discovered that:) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 504.5671653543306547 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 504.5671653543306547 Td
+(iPhone 14 was set to static IP and routing configuration) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 490.3939370078739444 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 490.3939370078739444 Td
+(Other smartphones were using dynamic configuration \(DHCP\)) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 462.0474803149605805 Td
+(3. Adjusting Configuration) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 432.2837007874015285 Td
+(I switched the iPhone 14 from static to dynamic by:) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 403.9372440944881077 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 403.9372440944881077 Td
+(Disabling the static IP settings) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 389.7640157480314542 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 389.7640157480314542 Td
+(Enabling dynamic \(DHCP\) settings) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 375.5907874015747439 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 375.5907874015747439 Td
+(Performing a DHCP refresh to allow the phone to automatically obtain the correct network settings) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 347.24433070866138 Td
+(4. Verification of Connectivity) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 317.480551181102328 Td
+(I pinged the HTTP server from the iPhone 14 again, which now responded successfully. However, I didn't) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 297.6380314960629221 Td
+(stop there.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 255.1183464566928478 Td
+(5. HTTP Functionality Test \(Beyond Ping\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 225.354566929133739 Td
+(To ensure full web access:) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 197.0081102362204319 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 197.0081102362204319 Td
+(I opened each smartphone's browser) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 182.8348818897636647 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 182.8348818897636647 Td
+(Typed http://169.15.80.160 \(IP of server\) in the URL bar) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 168.6616535433070112 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 168.6616535433070112 Td
+(Confirmed access to the Cisco default web page) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 154.4884251968503577 Td
+(•) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+70.8661417322834666 154.4884251968503577 Td
+(Navigated through various hyperlinks, confirming that images and content loaded correctly) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 126.1419685039369369 Td
+(Why this solution?) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 89.2915748031495013 Td
+(Switching to DHCP ensures compatibility and centralized management of IP addressing and routing via the) Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 10 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 3140
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 785.1970866141732586 Td
+(cell tower. Additionally, testing HTTP access using a browser ensured that application-layer services \(not just) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 765.3545669291338527 Td
+(network-layer pings\) were functioning.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 722.8348818897637784 Td
+(WR1 Router) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 666.1419685039369369 Td
+(Problem) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 629.291574803149615 Td
+(Not all end devices can connect to router through wireless connection.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 586.7718897637794271 Td
+(Where was this problem located in the topology?) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 549.9214960629921052 Td
+(The issue was traced to Router WR1's Wireless MAC Filter settings.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 507.4018110236219741 Td
+(Steps Taken to Solve the Problem) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 456.378188976377885 Td
+(1. Initial Investigation) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 426.614409448818833 Td
+(I reviewed the wireless configuration of all four WR1 network devices. I compared the configurations of those) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 406.7718897637794839 Td
+(that could connect \(e.g., LAP1\) with those that could not \(e.g., PC5\) to identify any inconsistencies.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 364.2522047244094097 Td
+(2. Device-Specific Observation) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 334.4884251968503008 Td
+(LAP1's settings were correct, but it could not connect. Meanwhile, PC5 had a failed DHCP request, indicating) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 314.6459055118109518 Td
+(it was not receiving an IP address.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 272.1262204724408775 Td
+(3. Router Configuration Review) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 242.3624409448817687 Td
+(I checked Router WR1's wireless settings and discovered that MAC address filtering was enabled. LAP1's) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 222.5199212598424765 Td
+(MAC address was not on the allowed list.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 180.0002362204724022 Td
+(4. Solution Implementation) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 150.2364566929132934 Td
+(I added LAP1's MAC address to the filter list and saved the changes.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 107.7167716535432191 Td
+(5. Verification) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 77.9529921259841103 Td
+(LAP1 successfully connected to the Wi-Fi. I verified connectivity by pinging both the router and other LAN) Tj
+ET
+endstream
+endobj
+11 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 12 0 R
+>>
+endobj
+12 0 obj
+<<
+/Length 1873
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 785.1970866141732586 Td
+(devices — all responses were successful.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.118 0.251 0.686 rg
+56.6929133858267775 742.6774015748030706 Td
+(6. Next Device \(PC5\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 712.9136220472440755 Td
+(I moved on to PC5, which was still unable to connect to the network.) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0.118 0.227 0.541 rg
+56.6929133858267775 670.3939370078740012 Td
+(Why this solution?) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 633.5435433070865656 Td
+(MAC address filtering is a common security feature that restricts Wi-Fi access to approved devices. Adding) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 613.7010236220471597 Td
+(the correct MAC address restored connectivity while maintaining network policy.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.145 0.388 0.922 rg
+56.6929133858267775 571.1813385826771992 Td
+(Conclusion) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 528.6616535433070112 Td
+(This task provided a valuable opportunity to engage in hands-on troubleshooting across multiple network) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 508.8191338582676622 Td
+(segments. It enhanced my understanding of IP addressing, DHCP functionality, and static routing. It) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 488.9766141732283131 Td
+(introduced me to a topology with a cell network and wireless connections. The exercise emphasized the) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 469.1340944881889072 Td
+(importance of attention to detail, as a minor misconfiguration such as an incorrect IP address or missing) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0. g
+56.6929133858267775 449.2915748031495582 Td
+(default gateway can result in significant network issues.) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R ]
+/Count 5
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+21 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+22 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+23 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+24 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+25 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+26 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 13 0 R
+/F2 14 0 R
+/F3 15 0 R
+/F4 16 0 R
+/F5 17 0 R
+/F6 18 0 R
+/F7 19 0 R
+/F8 20 0 R
+/F9 21 0 R
+/F10 22 0 R
+/F11 23 0 R
+/F12 24 0 R
+/F13 25 0 R
+/F14 26 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+27 0 obj
+<<
+/Producer (jsPDF 3.0.3)
+/CreationDate (D:20251027072222-00'00')
+>>
+endobj
+28 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 29
+0000000000 65535 f 
+0000020944 00000 n 
+0000022791 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000004629 00000 n 
+0000004766 00000 n 
+0000010974 00000 n 
+0000011111 00000 n 
+0000015548 00000 n 
+0000015686 00000 n 
+0000018879 00000 n 
+0000019018 00000 n 
+0000021026 00000 n 
+0000021152 00000 n 
+0000021283 00000 n 
+0000021417 00000 n 
+0000021555 00000 n 
+0000021679 00000 n 
+0000021808 00000 n 
+0000021940 00000 n 
+0000022076 00000 n 
+0000022204 00000 n 
+0000022331 00000 n 
+0000022460 00000 n 
+0000022593 00000 n 
+0000022695 00000 n 
+0000023044 00000 n 
+0000023130 00000 n 
+trailer
+<<
+/Size 29
+/Root 28 0 R
+/Info 27 0 R
+/ID [ <025AB8DDB9FB7D99F352410303999A0D> <025AB8DDB9FB7D99F352410303999A0D> ]
+>>
+startxref
+23234
+%%EOF

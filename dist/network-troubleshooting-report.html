@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Troubleshooting Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a202c;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2563eb;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #1e40af;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            color: #1e3a8a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1em;
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+        strong {
+            color: #1e40af;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        @media print {
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Network Troubleshooting Report</h1>
+        <p class="subtitle"><strong>Project by Teltonika</strong></p>
+
+        <div class="section">
+            <h2>S2 and S3 Problems</h2>
+
+            <h3>Problem</h3>
+            <p>S3 and S2 network devices cannot reach HTTP server and S2 network devices cannot reach S3 network devices. The devices could not reach the HTTP server because of misconfigurations in the routing table and DHCP settings, leading to packet loss.</p>
+
+            <h3>Where was this problem located in the topology?</h3>
+            <p>The issue was caused by routing misconfigurations on R2, and incorrect or missing configurations on the end devices in both S2 and S3.</p>
+
+            <h3>Steps Taken to Troubleshoot and Resolve the Issue</h3>
+
+            <h4>1. Approach</h4>
+            <p>I approached the problem by first troubleshooting each network separately, ensuring that the devices could communicate within their respective networks before addressing the inter-network connectivity and HTTP access issues.</p>
+
+            <h4>2. S2 Network Troubleshooting</h4>
+            <ul>
+                <li>On R2, I checked the routing table and discovered a misconfigured static route:
+                    <ul>
+                        <li><strong>Incorrect:</strong> 192.168.55.0/24 via 10.0.0.60</li>
+                        <li><strong>Correct:</strong> 192.168.55.0/24 via 10.0.0.61 (WR1)</li>
+                    </ul>
+                </li>
+                <li>Also, there was no static route from R2 to R1 at all.</li>
+                <li>I corrected the static route entries accordingly.</li>
+                <li>On end devices:
+                    <ul>
+                        <li>PC0 had a wrong IP, incorrect subnet mask, and no default gateway.</li>
+                        <li>PC1 had an APIPA address due to a failed DHCP request. The issue was that the DHCP server had no default gateway set.</li>
+                    </ul>
+                </li>
+                <li>I manually corrected PC0's settings.</li>
+                <li>For PC1, I enabled DHCP again after fixing the DHCP server, and the correct IP was assigned.</li>
+                <li>I verified connectivity between devices on S2 using ping, which was successful.</li>
+            </ul>
+
+            <h4>3. S3 Network Troubleshooting</h4>
+            <ul>
+                <li>Similar issues were present:
+                    <ul>
+                        <li>Devices were not getting IPs due to missing DHCP server configuration.</li>
+                        <li>R2 had no static route to WR1.</li>
+                    </ul>
+                </li>
+                <li>I added the necessary static route on R2.</li>
+                <li>I then configured the DHCP server to assign correct settings to S3 devices.</li>
+                <li>After doing this, devices in S3 successfully communicated within the network.</li>
+            </ul>
+
+            <h4>4. Restoring S2 to S3 Communication and HTTP Access</h4>
+            <ul>
+                <li>The final issue was that S2 didn't have a static route to S3, preventing inter-network communication.</li>
+                <li>I added a static route from S2's router to S3's network via R2.</li>
+                <li>I re-verified connectivity from both networks to each other.</li>
+            </ul>
+
+            <h4>5. HTTP Server Access</h4>
+            <ul>
+                <li>The misconfiguration in the routing table and DHCP settings seemed to have been causing lost packets, preventing the devices from reaching the HTTP server.</li>
+                <li>After all configurations were corrected, the devices could successfully communicate with the HTTP server.</li>
+                <li>I verified HTTP access by pinging the server and then testing the web browser to access the server's HTML files. I successfully navigated through the pages, confirming the issue was resolved.</li>
+            </ul>
+
+            <h3>Why this solution?</h3>
+            <p>The misconfigured static routes and DHCP settings prevented the devices from discovering correct paths and obtaining valid IP configurations. Once these were corrected, the devices were able to reach the HTTP server, and packet loss was eliminated. Ensuring that all routers had the correct static routes and all DHCP servers were properly configured allowed for proper inter-network communication and access to the HTTP server.</p>
+        </div>
+
+        <div class="section">
+            <h2>Cell Tower</h2>
+
+            <h3>Problem</h3>
+            <p>Not all smartphones connected to cell tower can reach HTTP server and its HTML files/websites.</p>
+
+            <h3>Where was this problem located in the topology?</h3>
+            <p>The issue was traced to the iPhone 14's routing configuration settings.</p>
+
+            <h3>Steps Taken to Troubleshoot the Problem</h3>
+
+            <h4>1. Initial Connectivity Test</h4>
+            <p>I tested HTTP server connectivity by pinging from all phones. Every smartphone responded successfully except the iPhone 14.</p>
+
+            <h4>2. Configuration Comparison</h4>
+            <p>I compared the iPhone 14's configuration with other functioning smartphones and discovered that:</p>
+            <ul>
+                <li>iPhone 14 was set to static IP and routing configuration</li>
+                <li>Other smartphones were using dynamic configuration (DHCP)</li>
+            </ul>
+
+            <h4>3. Adjusting Configuration</h4>
+            <p>I switched the iPhone 14 from static to dynamic by:</p>
+            <ul>
+                <li>Disabling the static IP settings</li>
+                <li>Enabling dynamic (DHCP) settings</li>
+                <li>Performing a DHCP refresh to allow the phone to automatically obtain the correct network settings</li>
+            </ul>
+
+            <h4>4. Verification of Connectivity</h4>
+            <p>I pinged the HTTP server from the iPhone 14 again, which now responded successfully. However, I didn't stop there.</p>
+
+            <h4>5. HTTP Functionality Test (Beyond Ping)</h4>
+            <p>To ensure full web access:</p>
+            <ul>
+                <li>I opened each smartphone's browser</li>
+                <li>Typed http://169.15.80.160 (IP of server) in the URL bar</li>
+                <li>Confirmed access to the Cisco default web page</li>
+                <li>Navigated through various hyperlinks, confirming that images and content loaded correctly</li>
+            </ul>
+
+            <h3>Why this solution?</h3>
+            <p>Switching to DHCP ensures compatibility and centralized management of IP addressing and routing via the cell tower. Additionally, testing HTTP access using a browser ensured that application-layer services (not just network-layer pings) were functioning.</p>
+        </div>
+
+        <div class="section">
+            <h2>WR1 Router</h2>
+
+            <h3>Problem</h3>
+            <p>Not all end devices can connect to router through wireless connection.</p>
+
+            <h3>Where was this problem located in the topology?</h3>
+            <p>The issue was traced to Router WR1's Wireless MAC Filter settings.</p>
+
+            <h3>Steps Taken to Solve the Problem</h3>
+
+            <h4>1. Initial Investigation</h4>
+            <p>I reviewed the wireless configuration of all four WR1 network devices. I compared the configurations of those that could connect (e.g., LAP1) with those that could not (e.g., PC5) to identify any inconsistencies.</p>
+
+            <h4>2. Device-Specific Observation</h4>
+            <p>LAP1's settings were correct, but it could not connect. Meanwhile, PC5 had a failed DHCP request, indicating it was not receiving an IP address.</p>
+
+            <h4>3. Router Configuration Review</h4>
+            <p>I checked Router WR1's wireless settings and discovered that MAC address filtering was enabled. LAP1's MAC address was not on the allowed list.</p>
+
+            <h4>4. Solution Implementation</h4>
+            <p>I added LAP1's MAC address to the filter list and saved the changes.</p>
+
+            <h4>5. Verification</h4>
+            <p>LAP1 successfully connected to the Wi-Fi. I verified connectivity by pinging both the router and other LAN devices — all responses were successful.</p>
+
+            <h4>6. Next Device (PC5)</h4>
+            <p>I moved on to PC5, which was still unable to connect to the network.</p>
+
+            <h3>Why this solution?</h3>
+            <p>MAC address filtering is a common security feature that restricts Wi-Fi access to approved devices. Adding the correct MAC address restored connectivity while maintaining network policy.</p>
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>This task provided a valuable opportunity to engage in hands-on troubleshooting across multiple network segments. It enhanced my understanding of IP addressing, DHCP functionality, and static routing. It introduced me to a topology with a cell network and wireless connections. The exercise emphasized the importance of attention to detail, as a minor misconfiguration such as an incorrect IP address or missing default gateway can result in significant network issues.</p>
+        </div>
+    </div>
+</body>
+</html>
