@@ -73,21 +73,34 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {technicalSkills.map((category, idx) => {
             const Icon = category.icon;
+            const isEmerald = category.color === 'emerald';
             return (
               <div
                 key={idx}
-                className={`group bg-slate-900/50 backdrop-blur-sm border border-${category.color}-500/20 rounded-xl p-6 hover:border-${category.color}-500/40 transition-all duration-300 flex flex-col`}
+                className={`group bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 transition-all duration-300 flex flex-col ${
+                  isEmerald
+                    ? 'border border-emerald-500/20 hover:border-emerald-500/40'
+                    : 'border border-cyan-500/20 hover:border-cyan-500/40'
+                }`}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 bg-${category.color}-500/10 rounded-lg group-hover:bg-${category.color}-500/20 transition-colors`}>
-                    <Icon className={`w-5 h-5 text-${category.color}-400`} />
+                  <div className={`p-2 rounded-lg transition-colors ${
+                    isEmerald
+                      ? 'bg-emerald-500/10 group-hover:bg-emerald-500/20'
+                      : 'bg-cyan-500/10 group-hover:bg-cyan-500/20'
+                  }`}>
+                    <Icon className={`w-5 h-5 ${isEmerald ? 'text-emerald-400' : 'text-cyan-400'}`} />
                   </div>
-                  <h4 className={`text-lg font-bold text-${category.color}-400`}>{category.category}</h4>
+                  <h4 className={`text-lg font-bold ${isEmerald ? 'text-emerald-400' : 'text-cyan-400'}`}>
+                    {category.category}
+                  </h4>
                 </div>
                 <div className="space-y-2">
                   {category.skills.map((skill, skillIdx) => (
                     <div key={skillIdx} className="flex items-center gap-2">
-                      <div className={`w-1.5 h-1.5 bg-${category.color}-400 rounded-full`}></div>
+                      <div className={`w-1.5 h-1.5 rounded-full ${
+                        isEmerald ? 'bg-emerald-400' : 'bg-cyan-400'
+                      }`}></div>
                       <span className="text-slate-300 text-sm">{skill}</span>
                     </div>
                   ))}

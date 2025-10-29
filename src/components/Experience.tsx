@@ -61,7 +61,7 @@ const Experience = () => {
           {experiences.map((exp, idx) => (
             <div
               key={idx}
-              className={`group bg-slate-900/50 backdrop-blur-sm border border-${exp.color}-500/20 rounded-xl p-6 hover:border-${exp.color}-500/40 transition-all duration-300 flex flex-col`}
+              className="group bg-slate-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 hover:border-emerald-500/40 transition-all duration-300 flex flex-col"
             >
               <div className="flex items-center gap-2 text-emerald-400 text-sm mb-3">
                 <Calendar className="w-4 h-4" />
@@ -70,7 +70,7 @@ const Experience = () => {
 
               <h3 className="text-xl font-bold text-slate-100 mb-2">{exp.role}</h3>
 
-              <p className={`text-base font-semibold text-${exp.color}-400 mb-1`}>{exp.company}</p>
+              <p className="text-base font-semibold text-emerald-400 mb-1">{exp.company}</p>
 
               <div className="flex items-center gap-2 text-slate-400 text-sm mb-3">
                 <MapPin className="w-3 h-3" />
