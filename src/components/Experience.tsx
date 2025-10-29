@@ -44,59 +44,42 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
               Work Experience
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiences.map((exp, idx) => (
             <div
               key={idx}
-              className={`group bg-slate-900/50 backdrop-blur-sm border border-${exp.color}-500/20 rounded-xl p-8 hover:border-${exp.color}-500/40 transition-all duration-300`}
+              className={`group bg-slate-900/50 backdrop-blur-sm border border-${exp.color}-500/20 rounded-xl p-6 hover:border-${exp.color}-500/40 transition-all duration-300 flex flex-col`}
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                <div className="flex-1">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className={`p-2 bg-${exp.color}-500/10 rounded-lg mt-1`}>
-                      <Briefcase className={`w-5 h-5 text-${exp.color}-400`} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-100 mb-1">{exp.role}</h3>
-                      <p className={`text-lg font-semibold text-${exp.color}-400 mb-2`}>{exp.company}</p>
-                      <p className="text-sm text-slate-400 italic">{exp.type}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 md:text-right">
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm">{exp.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-400">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">{exp.period}</span>
-                  </div>
-                </div>
+              <div className="flex items-center gap-2 text-emerald-400 text-sm mb-3">
+                <Calendar className="w-4 h-4" />
+                <span>{exp.period}</span>
               </div>
 
-              <div className="ml-14 space-y-3">
-                {exp.responsibilities.map((resp, respIdx) => (
-                  <div key={respIdx} className="flex items-start gap-3 group/item">
-                    <div className={`w-1.5 h-1.5 bg-${exp.color}-400 rounded-full mt-2 group-hover/item:scale-150 transition-transform`}></div>
-                    <p className="text-slate-300 leading-relaxed">{resp}</p>
-                  </div>
-                ))}
+              <h3 className="text-xl font-bold text-slate-100 mb-2">{exp.role}</h3>
+
+              <p className={`text-base font-semibold text-${exp.color}-400 mb-1`}>{exp.company}</p>
+
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-3">
+                <MapPin className="w-3 h-3" />
+                <span>{exp.location}</span>
               </div>
+
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                {exp.responsibilities[0]}
+              </p>
             </div>
           ))}
         </div>
