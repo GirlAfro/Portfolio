@@ -36,66 +36,41 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3">
             <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              Projects
+              Projects & Reports
             </span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Selected projects and reports demonstrating practical troubleshooting and security work.
-          </p>
+          <div className="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
-            <div key={idx} className="bg-slate-900/50 border border-emerald-500/20 rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6">
-              <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center bg-emerald-500/5 rounded-lg">
-                <Wifi className="w-8 h-8 text-emerald-400" />
+            <div key={idx} className="bg-slate-900/50 border border-emerald-500/20 rounded-xl p-6 hover:border-emerald-500/40 transition-all duration-300 flex flex-col">
+              <div className="flex items-center gap-2 text-emerald-400 text-sm mb-3">
+                <Calendar className="w-4 h-4" />
+                <span>{project.period}</span>
               </div>
 
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-slate-100 mb-2">{project.title}</h3>
-                <p className="text-slate-400 mb-4">{project.description}</p>
+              <h3 className="text-xl font-bold text-slate-100 mb-3">{project.title}</h3>
 
-                {project.outcomes && project.outcomes.length > 0 && (
-                  <div className="mb-3">
-                    <h4 className="text-sm text-emerald-300 font-semibold mb-1">Outcomes</h4>
-                    <ul className="list-disc list-inside text-slate-400 text-sm">
-                      {project.outcomes.map((o, i) => (
-                        <li key={i}>{o}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              <p className="text-slate-400 text-sm mb-4 leading-relaxed line-clamp-3">
+                {project.description}
+              </p>
 
-                <div className="flex items-center gap-4">
-                  <span className="text-sm text-slate-500">{project.period}</span>
-                  {project.downloadUrl && (
-                    <a
-                      href={project.downloadUrl}
-                      download={project.downloadName}
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 hover:border-blue-500/50 rounded-lg text-blue-400 text-sm font-medium transition-all duration-300"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download Report
-                    </a>
-                  )}
-                </div>
-
-                {project.features && project.features.length > 0 && (
-                  <div className="mt-4 text-sm text-slate-400">
-                    <h4 className="text-sm text-emerald-300 font-semibold mb-1">Key highlights</h4>
-                    <ul className="list-disc list-inside">
-                      {project.features.map((f, i) => (
-                        <li key={i}>{f}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+              {project.downloadUrl && (
+                <a
+                  href={project.downloadUrl}
+                  download={project.downloadName}
+                  className="inline-flex items-center gap-2 text-emerald-400 text-sm font-medium hover:text-emerald-300 transition-colors mt-auto"
+                >
+                  View Report
+                  <span>→</span>
+                </a>
+              )}
             </div>
           ))}
         </div>
