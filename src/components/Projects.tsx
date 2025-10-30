@@ -1,4 +1,4 @@
-import { Wifi, Server, Router, Smartphone, CheckCircle, Download } from 'lucide-react';
+import { Wifi, Server, Router, Smartphone, CheckCircle, Download, Calendar } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
