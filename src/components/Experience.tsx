@@ -9,9 +9,9 @@ const Experience = () => {
       period: 'December 2022 - September 2023',
       type: 'Part-time (70%)',
       responsibilities: [
-        'Managed data entry tasks and maintained high accuracy and efficiency under tight deadlines',
-        'Reviewed data for accuracy, identifying and correcting inconsistencies',
-        'Managed the physical and digital filing systems to ensure documents are stored properly and can be retrieved easily'
+        'Coordinated voting registration for over 3,000 delegates as part of a 9-member team, utilizing Excel for data entry, verification, and quality assurance',
+        'Integrated Excel data seamlessly with Zebra CardStudio software to produce digital identification cards for delegates',
+        'Identified and resolved data inconsistencies prior to card production, ensuring 100% accuracy in delegate credentials'
       ],
       color: 'emerald'
     },
@@ -22,9 +22,9 @@ const Experience = () => {
       period: 'December 2022 - September 2023',
       type: 'Part-time (10%) - Packaging Department',
       responsibilities: [
-        'Performed quality checks and packaged products according to company standards',
-        'Conducted regular inspections of incoming materials and finished products to ensure they meet quality standards',
-        'Collected and analysed data related to the quality of packaging'
+        'Executed comprehensive physical-to-digital inventory audit, verifying over 2,000 units of finished goods and ensuring data accuracy across systems',
+        'Conducted quality control assessments to identify and tag obsolete stock for disposal, reducing waste and minimizing holding costs',
+        'Performed systematic quality inspections of incoming materials and finished products to maintain compliance with company standards'
       ],
       color: 'cyan'
     },
