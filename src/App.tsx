@@ -2,7 +2,6 @@ import { Shield, Mail, Phone, Code, Server, Lock, Terminal, Globe, Users, Award 
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
-import Projects from './components/Projects';
 import CurrentFocus from './components/CurrentFocus';
 import Contact from './components/Contact';
 
@@ -12,7 +11,6 @@ function App() {
       <Hero />
       <Experience />
       <Skills />
-      <Projects />
       <CurrentFocus />
       <Contact />
     </div>
