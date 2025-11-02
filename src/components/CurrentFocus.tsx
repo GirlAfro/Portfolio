@@ -44,7 +44,7 @@ const CurrentFocus = () => {
               <h3 className="text-xl font-bold text-slate-100">Professional Certificate</h3>
             </div>
             <p className="text-base text-cyan-400 font-semibold mb-3">Google Cybersecurity Certificate</p>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm mb-3">
               <div className="flex items-center gap-2 text-slate-300">
                 <Target className="w-3 h-3 text-cyan-400" />
                 <span>Google Professional Program</span>
@@ -53,6 +53,12 @@ const CurrentFocus = () => {
                 <Calendar className="w-3 h-3 text-cyan-400" />
                 <span>Expected Completion: November 2025</span>
               </div>
+            </div>
+            <div className="pt-3 border-t border-cyan-500/20">
+              <p className="text-xs text-slate-400">
+                <span className="font-semibold text-cyan-400">Topics: </span>
+                Introduction to Python, Splunk, Chronicle
+              </p>
             </div>
           </div>
         </div>
