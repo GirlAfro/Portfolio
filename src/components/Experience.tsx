@@ -1,17 +1,18 @@
-import { Briefcase, MapPin, Calendar } from 'lucide-react';
+import { Briefcase, MapPin, Calendar, Clock } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
     {
       company: 'Capital30 Company',
       location: 'Cape Town, South Africa',
-      role: 'Data Entry Specialist',
-      period: 'December 2022 - September 2023',
-      type: 'Part-time (70%)',
+      role: 'Data Entry Intern',
+      period: 'June - September 2023',
+      type: 'Temporary Intern',
       responsibilities: [
-        'Coordinated voting registration for over 3,000 delegates as part of a 9-member team, utilizing Excel for data entry, verification, and quality assurance.',
-        'Integrated Excel data seamlessly with Zebra CardStudio software to produce digital identification cards for delegates.',
-        'Identified and resolved data inconsistencies prior to card production, ensuring 100% accuracy in delegate credentials.'
+        'Coordinated voting registration for 3,000+ delegates using Excel for data entry, verification, and quality assurance.',
+        'Integrated Excel data with Zebra CardStudio software to produce digital identification cards.',
+        'Identified and resolved data inconsistencies prior to card production, ensuring 100% accuracy.',
+        'Core Skills & Tools: Excel, Zebra CardStudio, Data Entry, Quality Assurance.'
       ],
       color: 'emerald'
     },
@@ -19,30 +20,27 @@ const Experience = () => {
       company: 'Javaprint Packaging',
       location: 'Johannesburg, South Africa',
       role: 'Quality Control Intern',
-      period: 'December 2022 - September 2023',
-      type: 'Part-time (10%) - Packaging Department',
+      period: 'April - May 2023',
+      type: 'Temporary Intern',
       responsibilities: [
-        'Performed quality inspections on 25–30 print batches daily using MPS 8 Colour UV and Mark Andy P5 printing machines.',
-        'Verified color registration, lamination, and adhesion accuracy with Tube Scan Inspection Systems and Karlville Film Rewinders.',
-        'Logged test data in JAVATRACK QMS for ISO 9001 compliance.',
-        'Utilized Excel and Power BI for defect analysis and reporting, contributing to an 8% reduction in rework through process calibration and operator feedback.',
-        'Equipment & Software: MPS 8 Colour UV Press, Mark Andy P5 & 2200 G Series, Karlville Rewinder, Tube Scan Systems, JAVATRACK QMS, Excel, Power BI.'
+        'Performed quality inspections on 25–30 print batches daily across UV and Mark Andy printing machines.',
+        'Verified color registration, lamination accuracy using Tube Scan Systems and Karlville Film Rewinders.',
+        'Analyzed defect data with Excel and Power BI, contributing to 8% reduction in rework.',
+        'Core Skills & Tools: MPS 8 Colour UV Press, Mark Andy P5, Excel, Power BI, JAVATRACK QMS, ISO 9001.'
       ],
       color: 'cyan'
     },
     {
       company: 'Prestigious Apartments',
       location: 'Johannesburg, South Africa',
-      role: 'Administration Assistant',
-      period: 'December 2022 - September 2023',
-      type: 'Part-time Contract (20%)',
+      role: 'Receptionist',
+      period: 'December 2022 - February 2023',
+      type: 'Temporary Contract',
       responsibilities: [
-        'Managed day-to-day front desk operations for an Airbnb accommodating up to 25 guests.',
-        'Oversaw bookings across multiple platforms, handled cash and bank payments, and recorded all transactions accurately.',
-        'Processed monthly utility expenses (electricity and water) and maintained budget records.',
-        'Welcomed guests, addressed inquiries, and resolved on-site issues to ensure a smooth stay.',
-        'Acted as the sole on-site point of contact, reporting directly to the owner and maintaining full operational responsibility during their absence.',
-        'Key Skills: Guest Relations, Payment Management, Booking Coordination, Conflict Resolution, Record Keeping.'
+        'Managed front desk operations for Airbnb accommodating up to 25 guests, handling bookings across multiple platforms.',
+        'Processed payments, recorded transactions, and managed utility expenses with budget tracking.',
+        'Welcomed guests, resolved inquiries and on-site issues as sole on-site point of contact.',
+        'Core Skills & Tools: Guest Relations, Payment Management, Booking Coordination, Record Keeping.'
       ],
       color: 'emerald'
     }
@@ -68,25 +66,30 @@ const Experience = () => {
               key={idx}
               className="group bg-slate-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-6 hover:border-emerald-500/40 transition-all duration-300 flex flex-col"
             >
-              <div className="flex items-center gap-2 text-emerald-400 text-sm mb-3">
+              <div className="flex items-center gap-2 text-emerald-400 text-sm mb-2">
                 <Calendar className="w-4 h-4" />
                 <span>{exp.period}</span>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-100 mb-2">{exp.role}</h3>
+              <div className="flex items-center gap-2 text-cyan-400 text-xs mb-3">
+                <Clock className="w-3 h-3" />
+                <span className="font-semibold">{exp.type}</span>
+              </div>
+
+              <h3 className="text-xl font-bold text-slate-100 mb-1">{exp.role}</h3>
 
               <p className="text-base font-semibold text-emerald-400 mb-1">{exp.company}</p>
 
-              <div className="flex items-center gap-2 text-slate-400 text-sm mb-3">
+              <div className="flex items-center gap-2 text-slate-400 text-sm mb-4">
                 <MapPin className="w-3 h-3" />
                 <span>{exp.location}</span>
               </div>
 
-              <ul className="text-slate-400 text-sm mb-4 leading-relaxed list-disc ml-5">
+              <div className="text-slate-400 text-sm leading-relaxed space-y-2">
                 {exp.responsibilities.map((resp, respIdx) => (
-                  <li key={respIdx}>{resp}</li>
+                  <p key={respIdx}>{resp}</p>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
