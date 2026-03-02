@@ -51,13 +51,13 @@ const CurrentFocus = () => {
               </div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Calendar className="w-3 h-3 text-cyan-400" />
-                <span>Expected Completion: November 2025</span>
+                <span>Expected Completion: March 2026</span>
               </div>
             </div>
             <div className="pt-3 border-t border-cyan-500/20">
               <p className="text-xs text-slate-400">
                 <span className="font-semibold text-cyan-400">Topics: </span>
-                Introduction to Python, Splunk, Chronicle
+                Introduction to Python, Splunk, Chronicle, Wazuh, Incident Management, and Documentation
               </p>
             </div>
           </div>
