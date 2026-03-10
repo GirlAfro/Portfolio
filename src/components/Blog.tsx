@@ -96,8 +96,14 @@ const Blog = () => {
                   <span>{post.date}</span>
                 </div>
                 <a
-                  href="#"
-                  className={`inline-flex items-center gap-2 text-${post.color}-400 hover:text-${post.color}-300 transition-colors font-medium`}
+                  import { Link } from "react-router-dom";
+
+<Link
+  to={`/blog/${post.id}`}
+  className={`inline-flex items-center gap-2 text-${post.color}-400 hover:text-${post.color}-300 transition-colors font-medium`}
+>
+  Read More
+</Link>
                 >
                   Read More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
