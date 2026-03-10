@@ -26,7 +26,7 @@ const blogPosts = [
 
 const Blog = () => {
   return (
-    <div className="blog-section">
+    <section id="blog" className="blog-section">
       <h2>Blog Posts</h2>
       <div className="blog-posts">
         {blogPosts.map((post, index) => (
@@ -38,7 +38,7 @@ const Blog = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
