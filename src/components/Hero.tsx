@@ -49,7 +49,7 @@ const Hero = () => {
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </a>
           <a
-            href="#about"
+            href="#blog"
             className="px-8 py-4 border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 font-semibold rounded-lg transition-all duration-300 hover:bg-emerald-500/10"
           >
             Learn More
