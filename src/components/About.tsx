@@ -20,13 +20,10 @@ const About = () => {
             <div className="bg-slate-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-8 hover:border-emerald-500/40 transition-all duration-300">
               <h3 className="text-2xl font-bold text-emerald-400 mb-4">Background</h3>
               <p className="text-slate-300 leading-relaxed mb-4">
-                I'm a motivated third-year Information Systems and Cyber Security student at Vilnius University
-                with a strong foundation in networking, operating systems, and database management. My academic
-                journey is complemented by hands-on experience in data management, quality control, and customer service.
+               I am a motivated and energetic cybersecurity student. I am currently looking for hands-on experience.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                I'm passionate about leveraging my technical knowledge and communication skills to support clients,
-                troubleshoot security issues, and contribute to building secure, resilient systems.
+               I am looking forward to giving back as much as I can to the company and growing into a well-rounded cybersecurity professional.  
               </p>
             </div>
 
