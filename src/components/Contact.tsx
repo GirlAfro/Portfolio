@@ -1,5 +1,4 @@
-import { Mail, Phone, Shield } from 'lucide-react';
-
+import { Mail, Phone, Send, Shield } from 'lucide-react';
 const Contact = () => {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -23,7 +22,7 @@ const Contact = () => {
         <div className="bg-slate-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             
-              href="mailto:gamu6296@gmail.com"
+              href="mailto:kimchigarira13@gmail.com"
               className="group flex items-center gap-4 p-6 bg-slate-800/50 rounded-lg border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300 hover:transform hover:scale-105"
             >
               <div className="p-3 bg-emerald-500/10 rounded-lg group-hover:bg-emerald-500/20 transition-colors">
@@ -31,22 +30,11 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm text-slate-400 mb-1">Email</p>
-                <p className="text-slate-200 font-semibold">gamu6296@gmail.com</p>
+                <p className="text-slate-200 font-semibold">kimchigarira13@gmail.com</p>
               </div>
             </a>
             
-              href="#"
-              className="group flex items-center gap-4 p-6 bg-slate-800/50 rounded-lg border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:transform hover:scale-105"
-            >
-              <div className="p-3 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/20 transition-colors">
-                <Phone className="w-6 h-6 text-cyan-400" />
-              </div>
-              <div>
-                <p className="text-sm text-slate-400 mb-1">Phone</p>
-                <p className="text-slate-200 font-semibold">Available on request</p>
-              </div>
-            </a>
-          </div>
+  
           <div className="text-center">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/20 rounded-lg">
               <Shield className="w-5 h-5 text-emerald-400" />
@@ -68,5 +56,4 @@ const Contact = () => {
     </section>
   );
 };
-
 export default Contact;
